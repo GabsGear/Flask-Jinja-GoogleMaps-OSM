@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='Flask-GoogleMaps',
+    name='Flask-Topicos3',
     version='0.2.6',
     license='MIT',
     author='Gabriel Ghellere',
