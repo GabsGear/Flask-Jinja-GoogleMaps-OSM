@@ -35,7 +35,6 @@ def map_view():
             icons.dots.blue: [(latf, lonf, "Fim")],
         }
     )
-    
     init = Map(
         identifier="init",
         varname="init",
