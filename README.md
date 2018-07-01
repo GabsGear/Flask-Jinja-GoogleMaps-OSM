@@ -27,16 +27,17 @@ BACKEND:
 FRONTEND:
     Para mostrar os mapas ultiliza a plataforma jinja para geração de templates html, src/templates/plot.html
 
-    Requisitos:
-    -Python 2.7
+    Requisitos: 
+    -Python 2.7 recomendado Active Python https://www.activestate.com/activepython
+    -Python pip (sudo apt-get install python-pip)
     -Jinja (pip install Jinja2)
     -Flask (pip install Flask)
-    -SetupTools
-    -Google api key https://developers.google.com/maps/documentation/javascript/get-api-key
+    -SetupTools (pip install setuptools)
     -Networkx  (pip install networkx)
     -Python Flask google maps (pip install flask-googlemaps)
+    -Google api key https://developers.google.com/maps/documentation/javascript/get-api-key
 
-    Para rodar o programa:
+    Para rodar o programa após a instalação dos requisitos:
         $ python setup.py develop
         $ cd src
         $ python plot.py
