@@ -69,7 +69,7 @@ class OpenStreetGabs():
     def createZipPath(self):
         lat = []
         lon = []
-        caminho = self.dijkstra(self.getInicial(), self.getFinal())
+        caminho = self.dijkstra()
         for idt in caminho:
             for nodo in self.G.nodes():
                 if idt == self.G.nodes[nodo]['data'].id:
@@ -83,25 +83,19 @@ class OpenStreetGabs():
         dist = R * 2 * atan2(sqrt(a), sqrt(1 - a))    
         return dist/1000    
 
-    def reconstruct_path(self, came_from, start, end):
-        current = end
-        path = [current]
-        while current != start:
-            current = came_from[current]
-            path.append(current)
-        path.reverse()
-        return path
-
-    def dijkstra(self, start, end):
+    def dijkstra(self):
+        #adaptado de: https://gist.github.com/kachayev/5990802
+        # e https://stackoverflow.com/questions/22897209/dijkstras-algorithm-in-python
         pq = PriorityQueue()
-        pq.push(start, priority=0)
+        pq.push(self.getInicial(), priority=0)
         came_from = {}
         cost_so_far = {}
-        cost_so_far[start] = 0
-        came_from[start] = None
+        cost_so_far[self.getInicial()] = 0
+        came_from[self.getInicial()] = None
+
         while not pq.empty():
             current = pq.pop()
-            if current == end:
+            if current == self.getFinal():
                 break
             for neighbor in self.G.neighbors(current):
                 new_cost = cost_so_far[current] + float(self.coordDistances(self.G.nodes[current]['data'].lat, self.G.nodes[current]['data'].lon, self.G.nodes[neighbor]['data'].lat, self.G.nodes[neighbor]['data'].lon))
@@ -109,10 +103,16 @@ class OpenStreetGabs():
                     cost_so_far[neighbor] = new_cost
                     pq.push(neighbor, priority = new_cost)
                     came_from[neighbor] = current
-        path = self.reconstruct_path(came_from, start, end)
+        current = self.getFinal()
+        path = [current]
+        while current != self.getInicial():
+            current = came_from[current]
+            path.append(current)
+        path.reverse()
         return path
 
 class PriorityQueue(object):
+    # fonte: https://docs.python.org/2/library/heapq.html
     def __init__(self):
         self.__heapq = []
         
