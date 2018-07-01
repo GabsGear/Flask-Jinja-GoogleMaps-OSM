@@ -5,6 +5,7 @@ from flask_googlemaps import GoogleMaps
 from flask_googlemaps import Map, icons
 import tratamento
 
+
 app = Flask(__name__, template_folder="templates")
 app.config['GOOGLEMAPS_KEY'] = "AIzaSyALZI01uvpbpHjBzEVZPdsCcjXdRyK2NEU"
 GoogleMaps(app, key="AIzaSyALZI01uvpbpHjBzEVZPdsCcjXdRyK2NEU")
@@ -57,4 +58,4 @@ def map_view():
     return render_template('plot.html', init = init, bestWay=bestWay, plinemap=plinemap)
 
 if __name__ == "__main__":
-    app.run(debug=True, use_reloader=True)
+    app.run(debug=False, use_reloader=True)

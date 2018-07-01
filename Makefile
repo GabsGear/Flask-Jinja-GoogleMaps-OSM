@@ -15,8 +15,10 @@ clean:
 	@rm -rf *.egg-info
 
 install:
+	@pip install networkx
 	@pip install flit pypandoc pygments
 	@flit install -s
+
 
 build:
 	@flit build
