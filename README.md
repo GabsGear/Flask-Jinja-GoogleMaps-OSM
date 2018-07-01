@@ -29,10 +29,12 @@ FRONTEND:
 
     Requisitos:
     -Python 2.7
-    -Jinja
-    -Flask
-    -A google api key (pode usar a minha)
-    -Networkx
+    -Jinja (pip install Jinja2)
+    -Flask (pip install Flask)
+    -SetupTools 
+    -Google api key https://developers.google.com/maps/documentation/javascript/get-api-key
+    -Networkx  (pip install networkx)
+    -Python Flask google maps (pip install flask-googlemaps)
 
     Para rodar o programa:
         $ python setup.py develop
