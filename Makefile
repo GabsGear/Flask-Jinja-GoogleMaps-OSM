@@ -19,7 +19,6 @@ install:
 	@pip install flit pypandoc pygments
 	@flit install -s
 
-
 build:
 	@flit build
 

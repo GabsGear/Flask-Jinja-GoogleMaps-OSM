@@ -24,7 +24,6 @@ def map_view():
         'stroke_opacity': 1.0,
         'stroke_weight': 3,
     }
-
     plinemap = Map(
         identifier="plinemap",
         varname="plinemap",
@@ -46,7 +45,6 @@ def map_view():
             icons.dots.blue: [(latf, lonf, "Fim")]
         }
     )
-
     bestWay = Map(
         identifier="bestWay",
         varname="bestWay",

@@ -31,7 +31,7 @@ FRONTEND:
     -Python 2.7
     -Jinja (pip install Jinja2)
     -Flask (pip install Flask)
-    -SetupTools 
+    -SetupTools
     -Google api key https://developers.google.com/maps/documentation/javascript/get-api-key
     -Networkx  (pip install networkx)
     -Python Flask google maps (pip install flask-googlemaps)
